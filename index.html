@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Плеер для тестового задания</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="red" style="background-color: #eee;"></div>
+    <script src="./scripts/Player.js"></script>
+    <script>
+        window.onload = () => {
+
+            let a = new SomePlayer(document.getElementById('red'), {
+                title: 'Beams',
+                src: './files/1.mp3'
+            });
+            a.upload = function(){
+                alert('Callback from player');
+            }
+            
+            for(let i =0; i<3; i++) {
+                new SomePlayer(document.body);
+            }
+
+        }
+    </script>
+</body>
+</html>
